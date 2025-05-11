@@ -22,7 +22,7 @@ export const loginService = async (phone, password) => {
     localStorage.setItem("user", JSON.stringify(userData));
 
     return response.data;
-  } catch () {
+  } catch (error) {
     throw new Error("Login failed. Please check your credentials.");
   }
 };

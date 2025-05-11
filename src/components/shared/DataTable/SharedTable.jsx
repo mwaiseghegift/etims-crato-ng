@@ -24,7 +24,7 @@ import {
   DropdownMenuContent,
   DropdownMenuCheckboxItem,
 } from "@/components/ui/dropdown-menu";
-import { ChevronDown } from "lucide-react";
+import { ChevronDown, ChevronsLeft, ChevronsRight, Search } from "lucide-react";
 
 export function DataTable({ columns, data }) {
   const [sorting, setSorting] = useState([]);
@@ -53,17 +53,22 @@ export function DataTable({ columns, data }) {
 
   return (
     <div className="space-y-4">
-      <div className="flex items-center justify-between">
-        <Input
-          placeholder="Search..."
-          value={globalFilter ?? ""}
-          onChange={(e) => setGlobalFilter(e.target.value)}
-          className="h-8 w-[200px]"
-        />
+      {/* Toolbar */}
+      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
+        <div className="relative w-full sm:w-[250px]">
+          <Search className="absolute left-3 top-2.5 h-4 w-4 text-muted-foreground" />
+          <Input
+            value={globalFilter ?? ""}
+            onChange={(e) => setGlobalFilter(e.target.value)}
+            placeholder="Search..."
+            className="pl-9 h-9 rounded-md shadow-sm"
+          />
+        </div>
+
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
             <Button variant="outline" size="sm" className="ml-auto">
-              Columns <ChevronDown className="ml-2 h-4 w-4" />
+              Columns <ChevronDown className="ml-1 h-4 w-4" />
             </Button>
           </DropdownMenuTrigger>
           <DropdownMenuContent align="end">
@@ -73,9 +78,9 @@ export function DataTable({ columns, data }) {
               .map((col) => (
                 <DropdownMenuCheckboxItem
                   key={col.id}
-                  className="capitalize"
                   checked={col.getIsVisible()}
                   onCheckedChange={(value) => col.toggleVisibility(!!value)}
+                  className="capitalize"
                 >
                   {col.id}
                 </DropdownMenuCheckboxItem>
@@ -84,7 +89,8 @@ export function DataTable({ columns, data }) {
         </DropdownMenu>
       </div>
 
-      <div className="rounded-md border">
+      {/* Table */}
+      <div className="overflow-x-auto rounded-lg border border-muted">
         <Table>
           <TableHeader>
             {table.getHeaderGroups().map((headerGroup) => (
@@ -93,10 +99,7 @@ export function DataTable({ columns, data }) {
                   <TableHead key={header.id}>
                     {header.isPlaceholder
                       ? null
-                      : flexRender(
-                          header.column.columnDef.header,
-                          header.getContext()
-                        )}
+                      : flexRender(header.column.columnDef.header, header.getContext())}
                   </TableHead>
                 ))}
               </TableRow>
@@ -104,26 +107,20 @@ export function DataTable({ columns, data }) {
           </TableHeader>
 
           <TableBody>
-            {table.getRowModel().rows.length ? (
+            {table.getRowModel().rows.length > 0 ? (
               table.getRowModel().rows.map((row) => (
                 <TableRow key={row.id}>
                   {row.getVisibleCells().map((cell) => (
                     <TableCell key={cell.id}>
-                      {flexRender(
-                        cell.column.columnDef.cell,
-                        cell.getContext()
-                      )}
+                      {flexRender(cell.column.columnDef.cell, cell.getContext())}
                     </TableCell>
                   ))}
                 </TableRow>
               ))
             ) : (
               <TableRow>
-                <TableCell
-                  colSpan={columns.length}
-                  className="h-24 text-center"
-                >
-                  No results
+                <TableCell colSpan={columns.length} className="h-24 text-center text-sm text-muted-foreground">
+                  No matching records found.
                 </TableCell>
               </TableRow>
             )}
@@ -131,11 +128,15 @@ export function DataTable({ columns, data }) {
         </Table>
       </div>
 
-      <div className="flex items-center justify-between px-2">
-        <div className="text-sm text-muted-foreground">
-          Page {table.getState().pagination.pageIndex + 1} of{" "}
-          {table.getPageCount()}
-        </div>
+      {/* Pagination */}
+      <div className="flex items-center justify-between px-1 text-sm text-muted-foreground">
+        <span>
+          Page{" "}
+          <strong>
+            {table.getState().pagination.pageIndex + 1} of {table.getPageCount()}
+          </strong>
+        </span>
+
         <div className="space-x-2">
           <Button
             variant="outline"
@@ -143,7 +144,7 @@ export function DataTable({ columns, data }) {
             onClick={() => table.previousPage()}
             disabled={!table.getCanPreviousPage()}
           >
-            Previous
+            <ChevronsLeft className="h-4 w-4" />
           </Button>
           <Button
             variant="outline"
@@ -151,7 +152,7 @@ export function DataTable({ columns, data }) {
             onClick={() => table.nextPage()}
             disabled={!table.getCanNextPage()}
           >
-            Next
+            <ChevronsRight className="h-4 w-4" />
           </Button>
         </div>
       </div>

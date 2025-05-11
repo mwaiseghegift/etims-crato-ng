@@ -1,4 +1,4 @@
-import axiosInstance from "./config/axios-config";
+import axiosInstance from "../config/axios-config";
 import { API_ENDPOINTS } from "@/constants/apis";
 
 export const getAllCodeDefinitions = async () => {
