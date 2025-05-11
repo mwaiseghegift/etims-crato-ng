@@ -31,9 +31,6 @@ export default function SignInForm() {
       });
       return;
     }
-
-    localStorage.setItem("user", JSON.stringify(result.result));
-    localStorage.setItem("userToken", result.result.user_token);
     showToastMessage({
       type: "success",
       message: "You have successfully signed in",

@@ -19,26 +19,67 @@ const navItems = [
     path: "/",
   },
   {
-    name: "Products",
     icon: <ListIcon />,
-    path: "/products",
+    name: "Items",
+    path: "/items", // Related to: SAVE_ITEM, SELECT_ITEM_LIST, SAVE_ITEM_COMPOSITION
   },
   {
-    name: "Orders",
     icon: <ListIcon />,
-    path: "/orders",
-  },
-  {
-    name: "Chats",
-    icon: <CalenderIcon />,
-    path: "/chats",
+    name: "Item Classes",
+    path: "/item-classes", // SELECT_ITEM_CLASS_LIST
   },
   {
     icon: <UserCircleIcon />,
     name: "Customers",
-    path: "/customers",
+    path: "/customers", // SELECT_CUSTOMER, SAVE_BRANCH_CUSTOMER
+  },
+  {
+    icon: <UserCircleIcon />,
+    name: "Users",
+    path: "/users", // SAVE_BRANCH_USER
+  },
+  {
+    icon: <ListIcon />,
+    name: "Branches",
+    path: "/branches", // SELECT_BRANCH_LIST, SAVE_BRANCH_INSURANCE
+  },
+  {
+    icon: <ListIcon />,
+    name: "Imports",
+    path: "/imports", // SELECT_IMPORT_ITEM_LIST, UPDATE_IMPORT_ITEM
+  },
+  {
+    icon: <ListIcon />,
+    name: "Stock",
+    path: "/stock", // SELECT_STOCK_MOVE_LIST, INSERT_STOCK_IO, SAVE_STOCK_MASTER
+  },
+  {
+    icon: <ListIcon />,
+    name: "Purchases",
+    path: "/purchases", // SELECT_PURCHASE_SALES_LIST, INSERT_PURCHASE
+  },
+  {
+    icon: <ListIcon />,
+    name: "Code Definitions",
+    path: "/code-definitions", // GET_ALL_CODE_DEFINITION, UPDATE_ALL_CODE_DEFINITION
+  },
+  {
+    icon: <CalenderIcon />,
+    name: "Notices",
+    path: "/notices", // SELECT_NOTICE_LIST
+  },
+  {
+    icon: <ListIcon />,
+    name: "Initialization",
+    path: "/initialization", // INIT_SELECT_OSDC_INFO, INIT_SELECT_INFO
+  },
+  {
+    icon: <ListIcon />,
+    name: "basic",
+    path: "/basic", // SELECT_CODE_LIST
   },
 ];
+
 
 const othersItems = [
   {

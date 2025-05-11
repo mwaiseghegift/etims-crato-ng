@@ -4,6 +4,7 @@ import AppLayout from "../layout/AppLayout";
 import SignIn from "../pages/AuthPages/SignIn";
 import PrivateRoute from "./PrivateRoute";
 import ForgotPassword from "@/pages/AuthPages/ForgotPassword";
+import Items from "@/pages/dashboard/items/Items";
 
 const AppRoutes = () => {
   return (
@@ -18,6 +19,7 @@ const AppRoutes = () => {
         }
       >
         <Route index path="/" element={<Dashboard />} />
+        <Route path="/items" element={<Items />} />
       </Route>
     </Routes>
   );

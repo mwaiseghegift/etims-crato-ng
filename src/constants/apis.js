@@ -3,7 +3,7 @@ export const CRATO_ETIMS_API = "http://etims-api.crato.africa"; // replace with 
 export const API_ENDPOINTS = {
   SELECT_CODE_LIST: `${CRATO_ETIMS_API}/SelectCodeList`,
   SELECT_ITEM_CLASS_LIST: `${CRATO_ETIMS_API}/SelectItemClsList`,
-  SELECT_BRANCH_LIST: `${CRATO_ETIMS_API}/SelectBhfList`,
+  SELECT_BHF_LIST: `${CRATO_ETIMS_API}/SelectBhfList`,
   SELECT_NOTICE_LIST: `${CRATO_ETIMS_API}/SelectNoticeList`,
 
   SAVE_BRANCH_CUSTOMER: `${CRATO_ETIMS_API}/SaveBhfCustomer`,
@@ -25,7 +25,7 @@ export const API_ENDPOINTS = {
   SELECT_ITEM_LIST: `${CRATO_ETIMS_API}/SelectItemList`,
   SAVE_ITEM_COMPOSITION: `${CRATO_ETIMS_API}/SaveItemComposition`,
 
-  SELECT_PURCHASE_SALES_LIST: `${CRATO_ETIMS_API}/SelectTrnsPurchaseSalesList`,
+  SELECT_TRANS_PURCHASE_SALES_LIST: `${CRATO_ETIMS_API}/SelectTrnsPurchaseSalesList`,
   INSERT_PURCHASE: `${CRATO_ETIMS_API}/insertTrnsPurchase`,
 
   SELECT_STOCK_MOVE_LIST: `${CRATO_ETIMS_API}/SelectStockMoveList`,
