@@ -6,6 +6,8 @@ import PrivateRoute from "./PrivateRoute";
 import ForgotPassword from "@/pages/AuthPages/ForgotPassword";
 import Items from "@/pages/dashboard/items/Items";
 import CodeDefinitionsPage from "@/pages/dashboard/code-definitions";
+import CodeList from "@/pages/dashboard/BasicPage/code-list/CodeList";
+import BhfListPage from "@/pages/dashboard/BasicPage/bhf-list/bhf-list.page";
 
 const AppRoutes = () => {
   return (
@@ -22,6 +24,9 @@ const AppRoutes = () => {
         <Route index path="/" element={<Dashboard />} />
         <Route path="/items" element={<Items />} />
         <Route path="/code-definitions" element={<CodeDefinitionsPage />} />
+        <Route path="/code-list" element={<CodeList />} />
+        <Route path="/bhs-list" element={<BhfListPage />} />
+        {/* Add more routes here */}
       </Route>
     </Routes>
   );

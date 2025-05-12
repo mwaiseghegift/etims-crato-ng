@@ -15,7 +15,7 @@ import axiosInstance from "./config/axios-config";
 
 export const selectItemListService = async (body) => {
   try {
-    const response = await axiosInstance.post(API_ENDPOINTS.ITEM_LIST, body);
+    const response = await axiosInstance.post(API_ENDPOINTS.SELECT_ITEM_LIST, body);
     return response.data;
   } catch (error) {
     console.error("Error fetching item list:", error);

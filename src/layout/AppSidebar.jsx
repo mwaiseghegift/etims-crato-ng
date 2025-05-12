@@ -11,7 +11,6 @@ import {
 } from "../assets/icons";
 import { useSidebar } from "../context/SidebarContext";
 import SidebarWidget from "./SidebarWidget";
-
 const navItems = [
   {
     icon: <GridIcon />,
@@ -22,16 +21,19 @@ const navItems = [
     icon: <ListIcon />,
     name: "Items",
     path: "/items", // Related to: SAVE_ITEM, SELECT_ITEM_LIST, SAVE_ITEM_COMPOSITION
-  },
-  {
-    icon: <ListIcon />,
-    name: "Item Classes",
-    path: "/item-classes", // SELECT_ITEM_CLASS_LIST
+    subItems: [
+      { name: "Item List", path: "/items" },
+      { name: "Item Classes", path: "/item-classes" },
+    ],
   },
   {
     icon: <UserCircleIcon />,
     name: "Customers",
     path: "/customers", // SELECT_CUSTOMER, SAVE_BRANCH_CUSTOMER
+    subItems: [
+      { name: "Customer List", path: "/customers/list" },
+      { name: "Add Customer", path: "/customers/add" },
+    ],
   },
   {
     icon: <UserCircleIcon />,
@@ -52,16 +54,28 @@ const navItems = [
     icon: <ListIcon />,
     name: "Stock",
     path: "/stock", // SELECT_STOCK_MOVE_LIST, INSERT_STOCK_IO, SAVE_STOCK_MASTER
+    subItems: [
+      { name: "Stock List", path: "/stock/list" },
+      { name: "Add Stock", path: "/stock/add" },
+    ],
   },
   {
     icon: <ListIcon />,
     name: "Purchases",
     path: "/purchases", // SELECT_PURCHASE_SALES_LIST, INSERT_PURCHASE
+    subItems: [
+      { name: "Purchase List", path: "/purchases/list" },
+      { name: "Add Purchase", path: "/purchases/add" },
+    ],
   },
   {
     icon: <ListIcon />,
     name: "Code Definitions",
     path: "/code-definitions", // GET_ALL_CODE_DEFINITION, UPDATE_ALL_CODE_DEFINITION
+    subItems: [
+      { name: "Definition List", path: "/code-definitions/list" },
+      { name: "Add Definition", path: "/code-definitions/add" },
+    ],
   },
   {
     icon: <CalenderIcon />,
@@ -75,8 +89,14 @@ const navItems = [
   },
   {
     icon: <ListIcon />,
-    name: "basic",
+    name: "Basic",
     path: "/basic", // SELECT_CODE_LIST
+    subItems: [
+      { name: "Code List", path: "/code-list" },
+      { name: "Item Class List", path: "/item-class-list" },
+      { name: "Bhs List", path: "/bhs-list" },
+      { name: "Notice List", path: "/notice-list" },
+    ],
   },
 ];
 

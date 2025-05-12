@@ -23,7 +23,9 @@ export default function SignInForm() {
     setError("");
 
     const result = await loginService(phone, password);
-    if (result.result.result === false) {
+    
+    if (result.Error || result.UserID === 0) {
+      setLoading(false);
       setError("Invalid phone or password");
       showToastMessage({
         type: "error",

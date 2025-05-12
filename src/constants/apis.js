@@ -31,4 +31,6 @@ export const API_ENDPOINTS = {
   SELECT_STOCK_MOVE_LIST: `${CRATO_ETIMS_API}/SelectStockMoveList`,
   INSERT_STOCK_IO: `${CRATO_ETIMS_API}/InsertStockIO`,
   SAVE_STOCK_MASTER: `${CRATO_ETIMS_API}/SaveStockMaster`,
+
+  USER_LOGIN: `${CRATO_ETIMS_API}/api/Users/UserLogin`,
 };
