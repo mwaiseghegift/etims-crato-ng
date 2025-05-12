@@ -1,4 +1,3 @@
-// src/pages/items/ItemsPage.jsx
 import showToastMessage from "@/components/toast/toast";
 import { selectItemListService } from "@/services/items.service";
 import React, { useEffect, useState } from "react";

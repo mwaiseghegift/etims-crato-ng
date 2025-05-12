@@ -25,21 +25,7 @@ const navItems = [
   {
     icon: <UserCircleIcon />,
     name: "Customers",
-    path: "/customers", // SELECT_CUSTOMER, SAVE_BRANCH_CUSTOMER
-    subItems: [
-      { name: "Customer List", path: "/customers/list" },
-      { name: "Add Customer", path: "/customers/add" },
-    ],
-  },
-  {
-    icon: <UserCircleIcon />,
-    name: "Users",
-    path: "/users", // SAVE_BRANCH_USER
-  },
-  {
-    icon: <ListIcon />,
-    name: "Branches",
-    path: "/branches", // SELECT_BRANCH_LIST, SAVE_BRANCH_INSURANCE
+    path: "/customers/list", // SELECT_CUSTOMER, SAVE_BRANCH_CUSTOMER
   },
   {
     icon: <ListIcon />,
@@ -51,24 +37,19 @@ const navItems = [
     name: "Stock",
     path: "/stock", // SELECT_STOCK_MOVE_LIST, INSERT_STOCK_IO, SAVE_STOCK_MASTER
     subItems: [
-      { name: "Stock List", path: "/stock/list" },
+      { name: "Stock Movement", path: "/stock-movement/list" },
       { name: "Add Stock", path: "/stock/add" },
     ],
   },
   {
     icon: <ListIcon />,
     name: "Purchases",
-    path: "/purchases", // SELECT_PURCHASE_SALES_LIST, INSERT_PURCHASE
+    path: "/purchases/list", // SELECT_PURCHASE_SALES_LIST, INSERT_PURCHASE
   },
   {
     icon: <ListIcon />,
     name: "Code Definitions",
     path: "/code-definitions", // GET_ALL_CODE_DEFINITION, UPDATE_ALL_CODE_DEFINITION
-  },
-  {
-    icon: <CalenderIcon />,
-    name: "Notices",
-    path: "/notices", // SELECT_NOTICE_LIST
   },
   {
     icon: <ListIcon />,

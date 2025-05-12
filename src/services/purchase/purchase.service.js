@@ -7,7 +7,7 @@
  */
 
 import { API_ENDPOINTS } from "@/constants/apis";
-import axiosInstance from "./config/axios-config";
+import axiosInstance from "../config/axios-config";
 
 
 export const selectPurchaseSalesListService = async (body) => {
