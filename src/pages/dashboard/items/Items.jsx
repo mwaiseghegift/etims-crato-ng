@@ -1,44 +1,55 @@
-import PageBreadcrumb from "@/components/common/PageBreadCrumb";
-import { getUserRequestData } from "@/services/auth.service";
+// src/pages/items/ItemsPage.jsx
+import showToastMessage from "@/components/toast/toast";
 import { selectItemListService } from "@/services/items.service";
 import React, { useEffect, useState } from "react";
+import { itemsColumns } from "./items-columns";
+import PageBreadcrumb from "@/components/common/PageBreadCrumb";
+import { DataTable } from "@/components/shared/DataTable/SharedTable";
+import { getUserRequestData } from "@/services/auth.service";
 
-function Items() {
+
+function ItemsPage() {
   const [items, setItems] = useState([]);
-  const [loading, setLoading] = React.useState(true);
-  const [requestBody, setRequestBody] = useState({
-    vendorID: 0,
-    vendorKey: "",
-    lastReqDt: new Date().toISOString(),
-    saveResponseToFile: true,
-    saveDataToDatabase: true,
-  });
-
-  const userData = getUserRequestData();
-  if (userData) {
-    requestBody.vendorID = userData.vendorID;
-    requestBody.vendorKey = userData.vendorKey;
-  }
+  const [loading, setLoading] = useState(true);
 
   const fetchItems = async () => {
+    const userData = getUserRequestData();
     try {
-      const items = await selectItemListService(requestBody);
-      setItems(items);
-    } catch (error) {
-      console.error("Error fetching items:", error);
+      const res = await selectItemListService({
+        vendorID: userData?.vendorID || 0,
+        lastReqDt: "2022-05-12T06:48:33.148Z",
+        saveResponseToFile: true,
+        saveDataToDatabase: true,
+      });
+      if (res?.data?.itemList) {
+        setItems(res.data.itemList);
+      } else {
+        showToastMessage({
+          type: "error",
+          message: "No item data received.",
+        });
+      }
+    } catch (err) {
+      console.error("Error loading items:", err);
+      showToastMessage({
+        type: "error",
+        message: "Failed to load items.",
+      });
     } finally {
       setLoading(false);
     }
   };
+
   useEffect(() => {
     fetchItems();
   }, []);
 
   return (
     <>
-      <PageBreadcrumb pageTitle="Items" />
+      <PageBreadcrumb pageTitle="ITEMS" />
+      {!loading && <DataTable columns={itemsColumns} data={items} />}
     </>
-  )                                                                              
+  );
 }
 
-export default Items;
+export default ItemsPage;

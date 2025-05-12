@@ -21,10 +21,6 @@ const navItems = [
     icon: <ListIcon />,
     name: "Items",
     path: "/items", // Related to: SAVE_ITEM, SELECT_ITEM_LIST, SAVE_ITEM_COMPOSITION
-    subItems: [
-      { name: "Item List", path: "/items" },
-      { name: "Item Classes", path: "/item-classes" },
-    ],
   },
   {
     icon: <UserCircleIcon />,
@@ -63,19 +59,11 @@ const navItems = [
     icon: <ListIcon />,
     name: "Purchases",
     path: "/purchases", // SELECT_PURCHASE_SALES_LIST, INSERT_PURCHASE
-    subItems: [
-      { name: "Purchase List", path: "/purchases/list" },
-      { name: "Add Purchase", path: "/purchases/add" },
-    ],
   },
   {
     icon: <ListIcon />,
     name: "Code Definitions",
     path: "/code-definitions", // GET_ALL_CODE_DEFINITION, UPDATE_ALL_CODE_DEFINITION
-    subItems: [
-      { name: "Definition List", path: "/code-definitions/list" },
-      { name: "Add Definition", path: "/code-definitions/add" },
-    ],
   },
   {
     icon: <CalenderIcon />,
