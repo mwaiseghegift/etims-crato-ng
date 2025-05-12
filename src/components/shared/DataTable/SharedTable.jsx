@@ -92,7 +92,7 @@ export function DataTable({ columns, data }) {
       {/* Table */}
       <div className="overflow-x-auto rounded-lg border border-muted">
         <Table>
-          <TableHeader>
+          <TableHeader className="bg-gray-100 dark:bg-gray-800">
             {table.getHeaderGroups().map((headerGroup) => (
               <TableRow key={headerGroup.id}>
                 {headerGroup.headers.map((header) => (

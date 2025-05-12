@@ -29,20 +29,21 @@ export default {
   transparent: "transparent",
   white: "#FFFFFF",
   black: "#121212", // updated to match title text color
-  brand: {
-    25: "#E5FBF6",
-    50: "#BFF3E3",
-    100: "#95E9D0",
-    200: "#6BDDBD",
-    300: "#40D0AA",
-    400: "#2FB886", // main primary color from screenshot
-    500: "#1A7C63", // dark green accent seen in gradients
-    600: "#166D57",
-    700: "#125F4B",
-    800: "#0E503F",
-    900: "#0A4233",
-    950: "#062D22",
-  },
+brand: {
+  25: "#E5EFF9",
+  50: "#BFD6F0",
+  100: "#95B7E6",
+  200: "#6B97DC",
+  300: "#4077D1",
+  400: "#265DC2",
+  500: "#0F51A7", // base color
+  600: "#0D468F",
+  700: "#0B3A78",
+  800: "#083061",
+  900: "#06254B",
+  950: "#03152E",
+},
+
   "blue-light": {
     25: "#F5FAFC",
     50: "#E6F6FA",

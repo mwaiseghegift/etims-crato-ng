@@ -1,7 +1,6 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import { Link, useLocation } from "react-router";
 import {
-  CalenderIcon,
   ChevronDownIcon,
   GridIcon,
   HorizontaLDots,
@@ -35,11 +34,7 @@ const navItems = [
   {
     icon: <ListIcon />,
     name: "Stock",
-    path: "/stock", // SELECT_STOCK_MOVE_LIST, INSERT_STOCK_IO, SAVE_STOCK_MASTER
-    subItems: [
-      { name: "Stock Movement", path: "/stock-movement/list" },
-      { name: "Add Stock", path: "/stock/add" },
-    ],
+    path: "/stock-movement/list", // SELECT_STOCK_MOVE_LIST, INSERT_STOCK_IO, SAVE_STOCK_MASTER
   },
   {
     icon: <ListIcon />,
@@ -278,17 +273,13 @@ const AppSidebar = () => {
             <>
               <img
                 className="dark:hidden"
-                src="../assets/logo/logo.png"
+                src="/logo/logo.png"
                 alt="Logo"
-                width={150}
-                height={40}
               />
               <img
                 className="hidden dark:block"
-                src="../assets/logo/logo.png"
+                src="/logo/logo.png"
                 alt="Logo"
-                width={150}
-                height={40}
               />
             </>
           ) : (
