@@ -16,8 +16,8 @@ export default function Dashboard() {
   return (
     <>
       <PageMeta
-        title="WhatsApp Orders Dashboard"
-        description="Dashboard for tracking WhatsApp orders, customer interactions, and sales performance."
+        title="Etims Crato - Dashboard"
+        description="Dashboard page of the Etims Crato application"
       />
       <div className="mb-6 flex items-center justify-between">
         <div>

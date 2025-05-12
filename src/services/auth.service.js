@@ -36,24 +36,12 @@ export const forgotPasswordService = async (phone, password) => {
   }
   try {
     const payload = {
-      jsonrpc: "2.0",
-      params: {
-        db: "taimba_v17",
-        phone_number: phone,
-        new_passwd: password,
-      },
+      phone_number: phone,
+      new_passwd: password,
     };
     const response = await axios.post(
       API_ENDPOINTS.USER_FORGOT_PASSWORD,
-      payload,
-      {
-        headers: {
-          "Content-Type": "application/json",
-          db: "taimba_v17",
-          login: import.meta.env.VITE_DB_EMAIL,
-          password: import.meta.env.VITE_DB_PASSWORD,
-        },
-      }
+      payload
     );
     return response.data;
   } catch (error) {
@@ -124,4 +112,4 @@ export const getUserRequestData = () => {
       vendorKey: userData.VendorKey,
     };
   }
-}
+};

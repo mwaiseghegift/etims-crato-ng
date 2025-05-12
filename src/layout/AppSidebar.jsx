@@ -278,14 +278,14 @@ const AppSidebar = () => {
             <>
               <img
                 className="dark:hidden"
-                src="/images/logo/taimba-logo.png"
+                src="../assets/logo/logo.png"
                 alt="Logo"
                 width={150}
                 height={40}
               />
               <img
                 className="hidden dark:block"
-                src="/images/logo/taimba-logo.png"
+                src="../assets/logo/logo.png"
                 alt="Logo"
                 width={150}
                 height={40}
@@ -293,7 +293,7 @@ const AppSidebar = () => {
             </>
           ) : (
             <img
-              src="/images/logo/taimba-logo.png"
+              src="../assets/logo/logo.png"
               alt="Logo"
               width={32}
               height={32}
